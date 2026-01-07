@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Note Taking - AI-Powered Smart Notes</title>
+    <meta name="description"
+        content="Take smart notes from YouTube videos with AI-powered autocomplete. Never pause your learning flow again.">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📝 YouTube Note Taking</h1>
+            <p>AI-powered smart notes that complete your thoughts</p>
+        </header>
+
+        <!-- Status Message -->
+        <div id="statusMessage" style="display: none;"></div>
+
+        <!-- Input Section -->
+        <section class="glass-card input-section">
+            <h2 style="margin-bottom: 1rem; color: var(--text-primary);">🎥 Start a New Session</h2>
+            <div class="input-group">
+                <input type="text" id="youtubeUrl" class="input-field"
+                    placeholder="Paste YouTube URL here (e.g., https://www.youtube.com/watch?v=...)"
+                    aria-label="YouTube URL">
+                <button id="createSessionBtn" class="btn btn-primary">
+                    <span id="btnText">Create Session</span>
+                    <span id="btnLoader" style="display: none;" class="loading-spinner"></span>
+                </button>
+            </div>
+            <div class="keyboard-hint">
+                <span>💡 Tip:</span>
+                <span>Press <kbd class="key">TAB</kbd> in the editor to autocomplete your notes based on the video
+                    content</span>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Editor Section -->
+            <section class="glass-card editor-section">
+                <div class="editor-header">
+                    <h2>✍️ Your Notes</h2>
+                    <div class="editor-controls">
+                        <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                        <button id="downloadBtn" class="btn btn-secondary">Download</button>
+                    </div>
+                </div>
+
+                <div class="editor-wrapper">
+                    <div id="ghostTextOverlay" class="ghost-text-overlay"></div>
+                    <textarea id="noteEditor" class="note-editor"
+                        placeholder="Start typing your notes here... Press TAB for AI autocomplete suggestions based on the video content."
+                        aria-label="Note editor" disabled></textarea>
+                </div>
+
+                <div id="suggestionBox" class="suggestion-box">
+                    <div class="suggestion-label">💡 AI Suggestion (Press TAB to accept)</div>
+                    <div id="suggestionText"></div>
+                </div>
+            </section>
+
+            <!-- Sessions Panel -->
+            <section class="glass-card sessions-panel">
+                <h2>📚 Active Sessions</h2>
+                <div id="sessionList" class="session-list">
+                    <p style="color: var(--text-secondary); text-align: center; padding: 2rem;">
+                        No active sessions. Create one by entering a YouTube URL above.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
