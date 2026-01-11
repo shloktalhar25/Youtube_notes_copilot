@@ -1,18 +1,18 @@
-# 📝 YouTube Note Taking - AI-Powered Smart Notes
+#  YouTube Note Taking - AI-Powered Smart Notes
 
 An intelligent web application that helps you take notes from YouTube videos with AI-powered autocomplete. Never pause your learning flow again!
 
-## ✨ Features
+## Features
 
-- 🎥 **YouTube Integration**: Automatically fetch video transcripts from any YouTube URL
-- 🤖 **AI Autocomplete**: Smart sentence completion using Groq's Llama 3.1 8B model
-- 💾 **Vector Database**: ChromaDB embeddings for context-aware suggestions
-- 📚 **Session Management**: Separate sessions for each video to prevent content mixing
-- ⌨️ **TAB Autocomplete**: Press TAB to get intelligent suggestions based on video content
-- 🎨 **Modern UI**: Beautiful glassmorphism design with smooth animations
-- 📥 **Export Notes**: Download your notes as text files
+-  **YouTube Integration**: Automatically fetch video transcripts from any YouTube URL
+-  **AI Autocomplete**: Smart sentence completion using Groq's Llama 3.1 8B model
+-  **Vector Database**: ChromaDB embeddings for context-aware suggestions
+-  **Session Management**: Separate sessions for each video to prevent content mixing
+-  **TAB Autocomplete**: Press TAB to get intelligent suggestions based on video content
+-  **Modern UI**: Beautiful glassmorphism design with smooth animations
+-  **Export Notes**: Download your notes as text files
 
-## 🚀 How It Works
+##  How It Works
 
 1. **Enter YouTube URL**: Paste any YouTube video URL
 2. **Automatic Processing**: 
@@ -25,7 +25,7 @@ An intelligent web application that helps you take notes from YouTube videos wit
    - Suggestions are based entirely on the video content
 4. **Session-Based**: Each video has its own session to keep content separated
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Python 3.8 or higher
 - Groq API key (get it from [Groq Console](https://console.groq.com))
@@ -55,7 +55,7 @@ An intelligent web application that helps you take notes from YouTube videos wit
    GROQ_API_KEY=your_actual_groq_api_key_here
    ```
 
-## 🎯 Usage
+##  Usage
 
 1. **Start the server**:
    ```bash
@@ -81,14 +81,6 @@ An intelligent web application that helps you take notes from YouTube videos wit
    - Switch between sessions by clicking on them
    - Delete sessions when done
 
-## 🎨 Features in Detail
-
-### Autocomplete Behavior
-
-- **Context-Aware**: Suggestions are based on the video transcript using RAG (Retrieval Augmented Generation)
-- **Smart Completion**: Completes the current sentence or suggests the next logical step
-- **Video-Specific**: Each session uses only its video's content - no mixing!
-- **Low Latency**: Uses Groq's ultra-fast Llama 3.1 8B Instant model
 
 ### Example Usage
 
@@ -100,7 +92,7 @@ AI suggests: "Step 2: select python 3.14"
 
 The AI understands the context from the video and predicts what you're likely to write next!
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────────┐
@@ -150,30 +142,9 @@ The AI understands the context from the video and predicts what you're likely to
 └─────────────────┘
 ```
 
-## 📁 Project Structure
 
-```
-yt_notetaking/
-├── main.py                 # FastAPI backend
-├── requirements.txt        # Python dependencies
-├── .env.example           # Environment variables template
-├── .env                   # Your API keys (create this)
-├── static/
-│   ├── index.html        # Main HTML page
-│   ├── styles.css        # Beautiful CSS styling
-│   └── app.js            # Frontend JavaScript
-├── chroma_db/            # ChromaDB storage (auto-created)
-└── README.md             # This file
-```
 
-## 🔧 API Endpoints
-
-- `POST /api/create-session`: Create a new session from YouTube URL
-- `POST /api/autocomplete`: Get autocomplete suggestion
-- `GET /api/sessions`: List all active sessions
-- `DELETE /api/session/{session_id}`: Delete a session
-
-## 🎨 Tech Stack
+##  Tech Stack
 
 ### Backend
 - **FastAPI**: Modern Python web framework
@@ -181,53 +152,10 @@ yt_notetaking/
 - **Sentence Transformers**: Create embeddings from text
 - **Groq**: Ultra-fast LLM inference
 - **YouTube Transcript API**: Fetch video captions
-
-### Frontend
-- **Vanilla JavaScript**: No frameworks, pure performance
-- **Modern CSS**: Glassmorphism, gradients, animations
-- **Google Fonts**: Inter & Fira Code
-
-## 🐛 Troubleshooting
-
-### "Failed to fetch transcript"
-- Make sure the YouTube video has captions/subtitles enabled
-- Try a different video
-- Some videos may have restricted access
-
-### "Groq API error"
-- Check that your API key is correct in `.env`
-- Ensure you have API credits available
-- Check your internet connection
-
-### ChromaDB errors
-- Delete the `chroma_db` folder and restart
-- Make sure you have write permissions in the project directory
-
-## 🚀 Future Enhancements
-
-- [ ] Support for multiple languages
-- [ ] Custom embedding models
-- [ ] Note templates
-- [ ] Export to Markdown/PDF
-- [ ] Collaborative note-taking
-- [ ] Video timestamp linking
-- [ ] Search across all notes
-
-## 📄 License
+  
+##  License
 
 MIT License - feel free to use this project however you'd like!
 
-## 🤝 Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
 
-## 💡 Tips
-
-- For best results, use videos with clear, well-structured content
-- Type at least a few words before pressing TAB for better suggestions
-- The more context you provide, the better the autocomplete
-- Each session is independent - perfect for organizing notes by topic
-
----
-
-**Built with ❤️ using Groq, ChromaDB, and FastAPI**
